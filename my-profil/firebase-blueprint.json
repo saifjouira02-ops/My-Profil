@@ -1,0 +1,202 @@
+{
+  "entities": {
+    "PublicProfile": {
+      "title": "PublicProfile",
+      "description": "Publicly visible user profile without PII",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Firebase Auth UID" },
+        "displayName": { "type": "string", "description": "Display name (2-50 chars)" },
+        "handle": { "type": "string", "description": "Public handle (2-30 chars)" },
+        "bio": { "type": "string", "description": "Short user bio (max 240 chars)" },
+        "avatarSeed": { "type": "integer", "description": "Color avatar seed (0-5)" },
+        "avatarDataUrl": { "type": "string", "description": "Optional compressed image data URI" },
+        "isPrivate": { "type": "boolean", "description": "Whether profile discovery is restricted" },
+        "followersCount": { "type": "integer", "description": "Total followers count" },
+        "followingCount": { "type": "integer", "description": "Total following count" },
+        "postsCount": { "type": "integer", "description": "Total authored posts count" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp" }
+      },
+      "required": ["userId", "displayName", "handle", "bio", "avatarSeed", "isPrivate", "followersCount", "followingCount", "postsCount", "createdAt", "updatedAt"]
+    },
+    "PrivateAccount": {
+      "title": "PrivateAccount",
+      "description": "Private user account info and synced preferences (owner-only)",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "language": { "type": "string", "enum": ["ar", "en"] },
+        "darkMode": { "type": "string", "enum": ["system", "light", "dark"] },
+        "largeText": { "type": "boolean" },
+        "highContrast": { "type": "boolean" },
+        "showDemoContent": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "language", "darkMode", "largeText", "highContrast", "showDemoContent", "updatedAt"]
+    },
+    "Post": {
+      "title": "Post",
+      "description": "Social feed post with text and optional compressed image",
+      "type": "object",
+      "properties": {
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorHandle": { "type": "string" },
+        "authorAvatarSeed": { "type": "integer" },
+        "authorAvatarDataUrl": { "type": "string" },
+        "content": { "type": "string" },
+        "imageDataUrl": { "type": "string" },
+        "visibility": { "type": "string", "enum": ["public", "private"] },
+        "likesCount": { "type": "integer" },
+        "commentsCount": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["authorId", "authorName", "authorHandle", "authorAvatarSeed", "content", "visibility", "likesCount", "commentsCount", "createdAt", "updatedAt"]
+    },
+    "PostLike": {
+      "title": "PostLike",
+      "description": "Like record on a post keyed by liker UID",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "postId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "postId", "createdAt"]
+    },
+    "LikedPostRef": {
+      "title": "LikedPostRef",
+      "description": "User-scoped index of liked post IDs",
+      "type": "object",
+      "properties": {
+        "postId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["postId", "createdAt"]
+    },
+    "Comment": {
+      "title": "Comment",
+      "description": "Comment on a post",
+      "type": "object",
+      "properties": {
+        "postId": { "type": "string" },
+        "postVisibility": { "type": "string", "enum": ["public", "private"] },
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorAvatarSeed": { "type": "integer" },
+        "authorAvatarDataUrl": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["postId", "postVisibility", "authorId", "authorName", "authorAvatarSeed", "text", "createdAt", "updatedAt"]
+    },
+    "FollowRelation": {
+      "title": "FollowRelation",
+      "description": "Directed follow relationship keyed by followerId_followingId",
+      "type": "object",
+      "properties": {
+        "followerId": { "type": "string" },
+        "followerName": { "type": "string" },
+        "followerHandle": { "type": "string" },
+        "followerAvatarSeed": { "type": "integer" },
+        "followingId": { "type": "string" },
+        "followingName": { "type": "string" },
+        "followingHandle": { "type": "string" },
+        "followingAvatarSeed": { "type": "integer" },
+        "isPublicTarget": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["followerId", "followerName", "followerHandle", "followerAvatarSeed", "followingId", "followingName", "followingHandle", "followingAvatarSeed", "isPublicTarget", "createdAt"]
+    },
+    "AppNotification": {
+      "title": "AppNotification",
+      "description": "In-app notification for likes, comments, and follows",
+      "type": "object",
+      "properties": {
+        "recipientId": { "type": "string" },
+        "actorId": { "type": "string" },
+        "actorName": { "type": "string" },
+        "actorAvatarSeed": { "type": "integer" },
+        "type": { "type": "string", "enum": ["like", "comment", "follow"] },
+        "postId": { "type": "string" },
+        "previewText": { "type": "string" },
+        "isRead": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["recipientId", "actorId", "actorName", "actorAvatarSeed", "type", "isRead", "createdAt"]
+    },
+    "BlockedUser": {
+      "title": "BlockedUser",
+      "description": "Blocked user entry owned by the blocker",
+      "type": "object",
+      "properties": {
+        "blockedUserId": { "type": "string" },
+        "blockedDisplayName": { "type": "string" },
+        "blockedHandle": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["blockedUserId", "blockedDisplayName", "blockedHandle", "createdAt"]
+    },
+    "ContentReport": {
+      "title": "ContentReport",
+      "description": "Abuse report submitted by a signed-in user",
+      "type": "object",
+      "properties": {
+        "reporterId": { "type": "string" },
+        "targetType": { "type": "string", "enum": ["post", "user", "comment"] },
+        "targetId": { "type": "string" },
+        "reason": { "type": "string", "enum": ["spam", "harassment", "inappropriate", "misinformation", "other"] },
+        "details": { "type": "string" },
+        "status": { "type": "string", "enum": ["submitted"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["reporterId", "targetType", "targetId", "reason", "details", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/public_profiles/{userId}": {
+      "schema": { "$ref": "#/entities/PublicProfile" },
+      "description": "Public user profiles (PII-free)"
+    },
+    "/users/{userId}/private/{docId}": {
+      "schema": { "$ref": "#/entities/PrivateAccount" },
+      "description": "Owner-only private account data and preferences"
+    },
+    "/users/{userId}/liked_posts/{postId}": {
+      "schema": { "$ref": "#/entities/LikedPostRef" },
+      "description": "Owner-only index of liked post IDs"
+    },
+    "/users/{userId}/notifications/{notificationId}": {
+      "schema": { "$ref": "#/entities/AppNotification" },
+      "description": "User-scoped inbox for social notifications"
+    },
+    "/users/{userId}/blocked/{blockedUserId}": {
+      "schema": { "$ref": "#/entities/BlockedUser" },
+      "description": "User-scoped list of blocked accounts"
+    },
+    "/posts/{postId}": {
+      "schema": { "$ref": "#/entities/Post" },
+      "description": "User posts with visibility and interaction counters"
+    },
+    "/posts/{postId}/likes/{likerId}": {
+      "schema": { "$ref": "#/entities/PostLike" },
+      "description": "Individual like records per post"
+    },
+    "/posts/{postId}/comments/{commentId}": {
+      "schema": { "$ref": "#/entities/Comment" },
+      "description": "Comments on a post"
+    },
+    "/follows/{followId}": {
+      "schema": { "$ref": "#/entities/FollowRelation" },
+      "description": "Follow relationships between users"
+    },
+    "/reports/{reportId}": {
+      "schema": { "$ref": "#/entities/ContentReport" },
+      "description": "Immutable content abuse reports"
+    }
+  }
+}

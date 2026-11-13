@@ -1,0 +1,175 @@
+<resources>
+    <string name="app_name">my profil</string>
+    <string name="app_tagline">مساحتك الخاصة لمشاركة القصص والأفكار وبناء تواصل حقيقي.</string>
+    <string name="auth_hero_title">مرحبًا بك في my profil</string>
+    <string name="auth_hero_subtitle">أنشئ ملفك الشخصي، شارك المنشورات والصور، وتفاعل مع مجتمعك بالعربية والإنجليزية.</string>
+    <string name="sign_in_with_google">المتابعة باستخدام Google</string>
+    <string name="auth_note_google_only">محمي بتسجيل الدخول عبر Google وCloud Firestore. يمكن تفعيل البريد وكلمة المرور وتخزين الوسائط السحابي يدويًا من لوحة تحكم Firebase.</string>
+    <string name="auth_config_missing">إعدادات تسجيل الدخول غير مكتملة (default_web_client_id).</string>
+    <string name="auth_unexpected_credential">نوع بيانات الاعتماد غير متوقع.</string>
+    <string name="auth_failed_prefix">تعذّر تسجيل الدخول:</string>
+
+    <!-- Navigation -->
+    <string name="nav_feed">الرئيسية</string>
+    <string name="nav_explore">استكشاف</string>
+    <string name="nav_notifications">الإشعارات</string>
+    <string name="nav_profile">ملفي</string>
+
+    <!-- Common Actions -->
+    <string name="action_create_post">منشور جديد</string>
+    <string name="action_edit">تعديل</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_save">حفظ</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_close">إغلاق</string>
+    <string name="action_retry">إعادة المحاولة</string>
+    <string name="action_send">إرسال</string>
+    <string name="action_back">رجوع</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="action_sign_out">تسجيل الخروج</string>
+    <string name="action_confirm">تأكيد</string>
+    <string name="action_remove_image">إزالة الصورة</string>
+    <string name="action_more_options">خيارات إضافية</string>
+
+    <!-- Feed & Posts -->
+    <string name="feed_title">my profil</string>
+    <string name="feed_filter_all">كل المنشورات</string>
+    <string name="feed_filter_following">المتابَعون</string>
+    <string name="feed_empty_title">لا توجد منشورات بعد</string>
+    <string name="feed_empty_subtitle">انشر أول تحديث لك أو تابع حسابات جديدة من صفحة الاستكشاف.</string>
+    <string name="demo_badge">تجريبي</string>
+    <string name="visibility_public">عام</string>
+    <string name="visibility_private">خاص</string>
+    <string name="post_composer_title_new">إنشاء منشور</string>
+    <string name="post_composer_title_edit">تعديل المنشور</string>
+    <string name="post_content_hint">بماذا تفكر أو تود مشاركته اليوم؟</string>
+    <string name="post_add_photo">إرفاق صورة (اختياري)</string>
+    <string name="post_photo_limit_hint">يدعم JPEG وPNG وWebP (يُضغط بأمان تحت 350 كيلوبايت)</string>
+    <string name="post_publish">نشر</string>
+    <string name="post_update">حفظ التعديلات</string>
+    <string name="post_delete_confirm_title">هل تريد حذف هذا المنشور؟</string>
+    <string name="post_delete_confirm_body">سيتم حذف المنشور وجميع تعليقاته نهائيًا.</string>
+    <string name="post_validation_empty">يرجى كتابة نص المنشور قبل النشر.</string>
+    <string name="post_validation_too_long">يجب ألا يتجاوز النص 1,000 حرف.</string>
+    <string name="post_like_cd">إعجاب بالمنشور</string>
+    <string name="post_unlike_cd">إزالة الإعجاب</string>
+    <string name="post_comment_cd">عرض التعليقات</string>
+    <string name="post_image_cd">صورة مرفقة بالمنشور</string>
+    <string name="post_saved_toast">تم نشر المنشور</string>
+    <string name="post_updated_toast">تم تحديث المنشور</string>
+    <string name="post_deleted_toast">تم حذف المنشور</string>
+
+    <!-- Image Validation -->
+    <string name="image_error_type">نوع الملف غير مدعوم. يرجى اختيار صورة JPEG أو PNG أو WebP.</string>
+    <string name="image_error_size">حجم الصورة كبير جدًا (الحد الأقصى 8 ميجابايت للملف الأصلي).</string>
+    <string name="image_error_decode">تعذرت معالجة الصورة المختارة.</string>
+    <string name="image_attached_badge">الصورة جاهزة</string>
+
+    <!-- Comments -->
+    <string name="comments_title">التعليقات</string>
+    <string name="comments_empty">لا توجد تعليقات بعد. كن أول من يعلق!</string>
+    <string name="comment_hint">اكتب تعليقًا...</string>
+    <string name="comment_send_cd">إرسال التعليق</string>
+    <string name="comment_delete_cd">حذف التعليق</string>
+    <string name="comment_validation_empty">لا يمكن إرسال تعليق فارغ.</string>
+    <string name="demo_readonly_note">البيانات التجريبية للعرض فقط؛ يمكنك إنشاء منشورات حقيقية والتفاعل معها عبر Firestore.</string>
+
+    <!-- Profile & Follows -->
+    <string name="profile_title">الملف الشخصي</string>
+    <string name="profile_edit_button">تعديل الملف</string>
+    <string name="profile_setup_title">إعداد ملفك الشخصي</string>
+    <string name="profile_display_name">الاسم الظاهر</string>
+    <string name="profile_handle">اسم المستخدم</string>
+    <string name="profile_bio">النبذة التعريفية</string>
+    <string name="profile_change_photo">تغيير صورة الملف</string>
+    <string name="profile_privacy_private_label">حساب خاص</string>
+    <string name="profile_privacy_private_desc">إخفاء ملفك الشخصي من البحث العام والاكتشاف</string>
+    <string name="profile_stats_posts">المنشورات</string>
+    <string name="profile_stats_followers">المتابِعون</string>
+    <string name="profile_stats_following">يتابع</string>
+    <string name="profile_posts_heading">المنشورات</string>
+    <string name="profile_posts_empty">لم يتم نشر أي محتوى بعد.</string>
+    <string name="profile_follow">متابعة</string>
+    <string name="profile_following_btn">متابَع</string>
+    <string name="profile_followers_title">المتابِعون</string>
+    <string name="profile_following_title">المتابَعون</string>
+    <string name="profile_list_empty">لا توجد حسابات للعرض حاليًا.</string>
+    <string name="profile_validation_name">يجب أن يكون الاسم بين 2 و50 حرفًا.</string>
+    <string name="profile_validation_handle">اسم المستخدم يجب أن يكون بين 2 و30 حرفًا (أحرف أو أرقام أو _ أو .).</string>
+    <string name="profile_private_notice">حساب خاص</string>
+    <string name="profile_saved_toast">تم حفظ الملف الشخصي</string>
+
+    <!-- Explore & Search -->
+    <string name="explore_title">استكشاف</string>
+    <string name="search_hint">ابحث عن مستخدمين أو منشورات...</string>
+    <string name="search_tab_people">الأشخاص</string>
+    <string name="search_tab_posts">المنشورات</string>
+    <string name="search_empty_people">لا توجد حسابات مطابقة لبحثك.</string>
+    <string name="search_empty_posts">لا توجد منشورات مطابقة لبحثك.</string>
+    <string name="search_prompt_subtitle">اكتشف المبدعين والأصدقاء وأحدث المنشورات</string>
+
+    <!-- Notifications -->
+    <string name="notifications_title">الإشعارات</string>
+    <string name="notifications_mark_all_read">تحديد الكل كمقروء</string>
+    <string name="notifications_empty_title">لا توجد إشعارات جديدة</string>
+    <string name="notifications_empty_subtitle">ستظهر هنا تنبيهات الإعجاب والتعليق والمتابعة الجديدة.</string>
+    <string name="notif_liked_post">أعجب بمنشورك</string>
+    <string name="notif_commented_post">علّق على منشورك</string>
+    <string name="notif_followed_you">بدأ بمتابعتك</string>
+    <string name="notif_unread_cd">إشعار غير مقروء</string>
+
+    <!-- Safety: Block & Report -->
+    <string name="action_block_user">حظر المستخدم</string>
+    <string name="action_unblock_user">إلغاء الحظر</string>
+    <string name="action_report_content">إبلاغ عن محتوى</string>
+    <string name="block_confirm_title">حظر %1$s؟</string>
+    <string name="block_confirm_body">لن تظهر لك منشورات أو تحديثات هذا المستخدم بعد الآن.</string>
+    <string name="blocked_users_title">الحسابات المحظورة</string>
+    <string name="blocked_users_empty">لا توجد حسابات محظورة حاليًا.</string>
+    <string name="report_title">الإبلاغ عن محتوى مسيء</string>
+    <string name="report_reason_spam">محتوى مزعج أو احتيالي</string>
+    <string name="report_reason_harassment">مضايقة أو خطاب كراهية</string>
+    <string name="report_reason_inappropriate">محتوى غير لائق</string>
+    <string name="report_reason_misinformation">معلومات مضللة</string>
+    <string name="report_reason_other">سبب آخر</string>
+    <string name="report_details_hint">تفاصيل إضافية (اختياري)</string>
+    <string name="report_submit">إرسال البلاغ</string>
+    <string name="report_submitted_toast">تم إرسال البلاغ بنجاح. شكرًا لمساهمتك في أمان المجتمع.</string>
+    <string name="user_blocked_toast">تم حظر المستخدم</string>
+    <string name="user_unblocked_toast">تم إلغاء الحظر</string>
+
+    <!-- Settings & Accessibility -->
+    <string name="settings_title">الإعدادات والخصوصية</string>
+    <string name="settings_section_language">اللغة والتنسيق المحلي</string>
+    <string name="settings_language_label">لغة التطبيق</string>
+    <string name="language_arabic">العربية (RTL)</string>
+    <string name="language_english">English (LTR)</string>
+    <string name="settings_language_extensible_note">اللغات المتوفرة حاليًا: العربية (من اليمين لليسار) والإنجليزية (من اليسار لليمين)، مع بنية موارد جاهزة لإضافة لغات جديدة.</string>
+    <string name="settings_section_appearance">المظهر</string>
+    <string name="settings_theme_system">حسب النظام</string>
+    <string name="settings_theme_light">الوضع الفاتح</string>
+    <string name="settings_theme_dark">الوضع الداكن</string>
+    <string name="settings_section_accessibility">إمكانية الوصول</string>
+    <string name="settings_large_text">تكبير حجم الخط</string>
+    <string name="settings_large_text_desc">يزيد حجم النصوص والعناوين لتسهيل القراءة</string>
+    <string name="settings_high_contrast">تباين ألوان مرتفع</string>
+    <string name="settings_high_contrast_desc">يقوي وضوح الحدود وتباين النصوص</string>
+    <string name="settings_section_privacy">الخصوصية والأمان</string>
+    <string name="settings_private_profile">جعل الملف الشخصي خاصًا</string>
+    <string name="settings_private_profile_desc">إخفاء ملفك الشخصي من نتائج البحث العام</string>
+    <string name="settings_blocked_accounts">إدارة الحسابات المحظورة</string>
+    <string name="settings_section_demo">البيانات التجريبية</string>
+    <string name="settings_show_demo">عرض المنشورات التجريبية المميزة</string>
+    <string name="settings_show_demo_desc">يعرض أمثلة جاهزة موسومة بشارة "تجريبي"</string>
+    <string name="settings_section_account">الحساب</string>
+    <string name="settings_signed_in_as">مسجل الدخول بصفتك: %1$s</string>
+    <string name="settings_console_note">تعتمد المصادقة على حساب Google. يمكن تفعيل استعادة كلمة المرور بالبريد وإشعارات الدفع FCM يدويًا من لوحة تحكم Firebase.</string>
+
+    <!-- States -->
+    <string name="loading_label">جارٍ التحميل...</string>
+    <string name="error_generic">حدث خطأ غير متوقع. يرجى المحاولة مجددًا.</string>
+    <string name="error_network_or_permission">تعذّر إتمام العملية. تحقق من الاتصال أو الصلاحيات.</string>
+    <string name="time_just_now">الآن</string>
+    <string name="avatar_cd">الصورة الشخصية للمستخدم %1$s</string>
+    <string name="auth_hero_cd">رسم تعبيري لمجتمع my profil</string>
+</resources>

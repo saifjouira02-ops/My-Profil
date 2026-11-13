@@ -1,0 +1,6 @@
+{
+  "name": "my profil",
+  "description": "A modern, multilingual social network app with profiles, posts, comments, likes, follows, search, notifications, and privacy controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
